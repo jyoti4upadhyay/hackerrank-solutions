@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:26 a.m.
+// Technique   linear-scan-counter
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm iterates through the list once to maintain three separate counters for positive, negative, and zero values, then calculates their ratios relative to the total list size.
+// Interview   Before: "I would use a hash map to store counts of positive, negative, and zero values." After: "A single linear pass with three integer counters is more efficient, achieving O(n) time and O(1) space complexity while ensuring the required six-decimal precision output."
+// Pitfalls    (1) Performing integer division instead of casting to double, which truncates the ratio to zero.  (2) Failing to format the output to exactly six decimal places as required by the problem statement.  (3) Assuming the input list size is always greater than zero, which could lead to division by zero errors.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
