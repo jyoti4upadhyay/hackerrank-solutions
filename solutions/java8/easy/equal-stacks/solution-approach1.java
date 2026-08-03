@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:55 a.m.
+// Technique   three-pointer-greedy-reduction
+// Time        O(n1 + n2 + n3)
+// Space       O(1)
+// Insight     The algorithm iteratively reduces the height of the tallest stack by removing its top cylinder until all three stacks reach an identical total height.
+// Interview   Before: "I would use a hash set to find common prefix sums." After: "Since the stacks are ordered, I can use three pointers to greedily reduce the tallest stack. This runs in O(n1 + n2 + n3) time and O(1) space, correctly handling the empty stack case where the height becomes zero."
+// Pitfalls    (1) Failing to account for the case where all stacks become empty, resulting in a height of zero.  (2) Assuming the stacks are sorted by height, which is not guaranteed by the problem statement.  (3) Incorrectly updating the pointer index before subtracting the cylinder height from the current sum.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
