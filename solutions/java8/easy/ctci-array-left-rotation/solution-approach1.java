@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:07 a.m.
+// Technique   array-reversal-partitioning
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation achieves left rotation by reversing the entire array and then independently reversing the two segments defined by the rotation offset.
+// Interview   Before: "I would use a nested loop to shift elements one by one." After: "I can achieve O(n) time and O(n) space by partitioning the array into two segments based on the rotation count d, ensuring efficient element relocation for circular shifts."
+// Pitfalls    (1) The implementation fails if d exceeds the array size n, as the current logic does not apply a modulo operation to d.  (2) The code assumes d is strictly less than the array size, which may cause an ArrayIndexOutOfBoundsException if d equals or exceeds n.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
