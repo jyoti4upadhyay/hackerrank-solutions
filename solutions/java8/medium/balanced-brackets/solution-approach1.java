@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:55 a.m.
+// Technique   stack-based-bracket-matching
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm maintains a stack of opening brackets and ensures that every closing bracket matches the most recently pushed opening bracket, resulting in an empty stack only if the sequence is balanced.
+// Interview   Before: "I would use a counter to track open brackets." After: "A counter fails because order matters, so I use a stack to ensure O(n) time and space complexity by validating that each closing bracket matches the most recent opening bracket."
+// Pitfalls    (1) Failing to check if the stack is empty before calling peek() when encountering a closing bracket.  (2) Returning YES when the stack is not empty after processing the entire string, which indicates unmatched opening brackets.  (3) Incorrectly matching different bracket types by failing to verify the specific pair type during the pop operation.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
