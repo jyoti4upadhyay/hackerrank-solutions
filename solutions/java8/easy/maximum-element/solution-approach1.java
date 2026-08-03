@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:55 a.m.
+// Technique   dual-stack-max-tracking
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation maintains a secondary stack that stores only the non-decreasing maximum values, allowing constant-time retrieval of the current maximum while ensuring consistency during pop operations.
+// Interview   Before: "How would you track the maximum element in a stack with O(1) retrieval?" After: "By using a secondary stack to mirror the maximums, we achieve O(n) time and O(n) space complexity, ensuring that even with multiple identical maximums, the stack correctly updates during pop operations."
+// Pitfalls    (1) Failing to handle duplicate maximum values correctly by using a strict inequality instead of num >= maxStc.peek() during push operations.  (2) Attempting to pop from an empty stack when the problem constraints do not guarantee the stack is non-empty for type 2 operations.  (3) Incorrectly parsing the operation string when the input format contains multiple spaces or unexpected characters.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
