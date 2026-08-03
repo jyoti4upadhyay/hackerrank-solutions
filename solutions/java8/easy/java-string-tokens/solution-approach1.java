@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:08 a.m.
+// Technique   regex-split-tokenization
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation uses a regular expression to identify non-alphabetic delimiters, effectively isolating contiguous sequences of English letters as tokens.
+// Interview   Before: "I would use a manual loop to check character types." After: "Using String.split with the regex [^A-Za-z]+ provides an O(N) solution that handles empty strings and multiple delimiters correctly, ensuring all tokens are captured as required by the problem constraints."
+// Pitfalls    (1) Failing to handle empty input strings leads to an incorrect token count of one instead of zero.  (2) Using split without trimming the input string causes leading delimiters to produce an empty string as the first token.  (3) Misinterpreting the regex [^A-Za-z]+ as only splitting on spaces ignores other required delimiters like commas and apostrophes.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
