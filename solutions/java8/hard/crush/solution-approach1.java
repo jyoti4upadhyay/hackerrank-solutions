@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:09 a.m.
+// Technique   difference-array-prefix-sum
+// Time        O(n + m)
+// Space       O(n)
+// Insight     The algorithm uses a difference array to record range updates at boundaries, then computes the prefix sum to reconstruct the final values and identify the maximum.
+// Interview   Before: "I would iterate through the range for every query, resulting in O(n*m) time complexity." After: "By using a difference array, I can process each query in O(1) and perform a single O(n) pass to find the maximum, achieving O(n + m) total time complexity."
+// Pitfalls    (1) Failing to allocate the array with size n+2, which causes an ArrayIndexOutOfBoundsException when accessing the k+1 index for queries ending at n.  (2) Using an integer array instead of a long array, which leads to integer overflow when the sum of values exceeds the 32-bit signed integer limit.  (3) Incorrectly iterating the prefix sum loop, as the problem uses 1-based indexing and requires processing up to index n inclusive.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
