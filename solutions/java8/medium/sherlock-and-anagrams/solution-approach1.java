@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:09 a.m.
+// Technique   nested-substring-sorting-comparison
+// Time        O(q * n^4 * log n)
+// Space       O(n)
+// Insight     The algorithm identifies all possible substring pairs of equal length and determines if they are anagrams by comparing their sorted character arrays.
+// Interview   Before: "I would use a frequency map to count character occurrences for each substring." After: "This implementation uses nested loops to extract all substrings and sorts them to check for anagrams, resulting in O(q * n^4 * log n) time complexity, which is acceptable given the constraints on string length n."
+// Pitfalls    (1) The O(n^4 log n) complexity may exceed time limits for larger strings despite the small constraints.  (2) The nested loops for substring extraction and sorting perform redundant work by re-sorting the same substrings multiple times.  (3) The use of int for the flag variable may overflow if the number of anagrammatic pairs exceeds the maximum value of a 32-bit signed integer.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
