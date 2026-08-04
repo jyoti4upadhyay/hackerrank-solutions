@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-04, 07:31 p.m.
+// Technique   iterative-pointer-swapping
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm iterates through the list, swapping the next and prev pointers of each node until the entire sequence is reversed in place.
+// Interview   Before: "How do you reverse a doubly linked list in place?" After: "I iterate through the list, swapping the next and prev pointers for each node. This approach runs in O(n) time and O(1) space, correctly handling the empty list case where the head is null."
+// Pitfalls    (1) Failing to update the prev pointer of the nodes, which is required for a valid doubly linked list structure.  (2) Returning the original head instead of the new head, which is the last node of the original list.
 // ──────────────────────────────────────────────────
 
 
