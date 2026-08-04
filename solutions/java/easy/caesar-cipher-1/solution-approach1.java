@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-05, 03:41 a.m.
+// Technique   modulo-arithmetic-character-shifting
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm normalizes the rotation factor using modulo 26 and applies a character-specific offset to preserve case while leaving non-alphabetic symbols unchanged.
+// Interview   Before: "I would iterate through the string and use a large if-else block to handle every possible character shift." After: "I normalize the shift factor with k % 26 and use character arithmetic to map letters within their respective ASCII ranges, achieving O(n) time complexity while correctly ignoring non-alphabetic symbols."
+// Pitfalls    (1) Failing to normalize the rotation factor k using modulo 26, which causes incorrect shifts for values greater than 26.  (2) Applying the shift to non-alphabetic characters, which violates the requirement that symbols remain unencrypted.  (3) Incorrectly calculating the character offset by failing to subtract the base ASCII value ('A' or 'a') before applying the modulo operator.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
