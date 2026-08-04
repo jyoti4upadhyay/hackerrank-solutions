@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-05, 02:28 a.m.
+// Technique   brute-force-character-pair-filtering
+// Time        O(N * U^2)
+// Space       O(N)
+// Insight     The algorithm identifies all unique characters in the string and evaluates every possible pair to determine if filtering the string to only those two characters results in a valid alternating sequence.
+// Interview   Before: "How do I find the longest alternating string?" After: "By iterating through all unique character pairs, we filter the string and validate the alternating property in O(N * U^2) time, where U is the number of unique characters, ensuring we handle cases where no valid string exists by returning zero."
+// Pitfalls    (1) Failing to handle the case where fewer than two unique characters exist, which results in a return value of zero.  (2) Assuming that any two characters will form a valid alternating string without checking for consecutive identical characters.  (3) Overlooking the requirement that all instances of excluded characters must be removed, which is implicitly handled by the filtering logic.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
