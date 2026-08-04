@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 02:50 p.m.
+// Technique   linear-trial-division
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm determines primality by checking if any integer from two up to n minus one divides n without a remainder.
+// Interview   Before: "I will check for divisors up to n." After: "The current implementation uses O(n) time complexity, which is inefficient for large inputs; checking divisors only up to the square root of n would optimize this to O(sqrt(n))."
+// Pitfalls    (1) The algorithm fails to meet the O(sqrt(n)) optimization suggested in the problem statement.  (2) The loop condition i < n results in unnecessary iterations for composite numbers.  (3) The guard n < 2 correctly handles the definition that primes must be greater than 1.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
