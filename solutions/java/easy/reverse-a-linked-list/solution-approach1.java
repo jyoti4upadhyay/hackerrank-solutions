@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-04, 07:17 p.m.
+// Technique   three-pointer-iterative-reversal
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains three pointers to track the current node, its predecessor, and its successor, effectively reversing the direction of each next pointer in a single pass.
+// Interview   Before: "I would use a stack to reverse the list." After: "Using three pointers allows for an O(n) time and O(1) space solution, which is optimal for reversing a linked list in place, even when the input head is null."
+// Pitfalls    (1) Failing to store the next node before updating the current node's next pointer results in losing the remainder of the list.  (2) Returning the original head instead of the new head (the last non-null node) causes the function to return the tail of the reversed list.
 // ──────────────────────────────────────────────────
 
 
