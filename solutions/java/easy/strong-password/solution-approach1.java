@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-05, 01:02 a.m.
+// Technique   regex-pattern-matching-validation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm calculates the number of missing character categories and the number of characters needed to reach the minimum length, returning the maximum of these two values to satisfy all constraints simultaneously.
+// Interview   Before: "I would iterate through the string and maintain four boolean flags for the required character types." After: "Using regex patterns is more concise here, resulting in O(n) time complexity where n is the password length, ensuring we meet the minimum length of 6 and include all four required character categories."
+// Pitfalls    (1) The regex pattern for special characters must correctly escape the hyphen character to avoid range errors in the character class.  (2) The logic must return the maximum of the length deficit and the missing category count, as adding a missing category character also contributes to the total length requirement.  (3) The regex pattern must use the dot-star prefix and suffix to correctly identify the presence of a character anywhere within the string.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
