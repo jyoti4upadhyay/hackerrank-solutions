@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-04, 04:11 p.m.
+// Technique   frequency-array-character-counting
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm tracks the frequency of each lowercase English letter in a fixed-size array and verifies that every index contains at least one occurrence.
+// Interview   Before: "I could use a Set to store unique characters." After: "Using a frequency array of size 26 is more efficient, achieving O(n) time and O(1) space, as it avoids the overhead of hashing while handling the alphabet constraint directly."
+// Pitfalls    (1) Failing to handle non-alphabetic characters like spaces, which are present in the input string but should not increment the frequency array indices.  (2) Incorrectly assuming the input string is already lowercase, which would cause index out of bounds errors if uppercase characters are processed without conversion.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
