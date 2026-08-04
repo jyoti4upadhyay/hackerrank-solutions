@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-04, 03:56 p.m.
+// Technique   array-based-difference-comparison
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm verifies the funny property by comparing the absolute differences of adjacent character ASCII values in the original string against those in its reversed counterpart.
+// Interview   Before: "I would reverse the string and compare every character." After: "I calculate the absolute differences of adjacent characters for both the original and reversed strings in O(n) time and O(n) space, ensuring the sequence of differences matches exactly as required by the problem definition."
+// Pitfalls    (1) Failing to account for the n-1 adjacent pairs when iterating through the string of length n.  (2) Incorrectly calculating the reverse string indices, which must map the original string's last character to the first position of the reversed array.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
