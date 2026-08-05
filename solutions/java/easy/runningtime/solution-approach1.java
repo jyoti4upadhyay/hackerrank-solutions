@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 02:18 a.m.
+// Technique   insertion-sort-shift-counter
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm counts the total number of swaps performed during insertion sort by incrementing a counter each time an element is shifted to the right to accommodate a smaller value.
+// Interview   Before: "How do I calculate the number of shifts in insertion sort?" After: "You track the number of times an element is moved to the right during the inner while loop. This approach has O(n^2) time complexity, which is expected for insertion sort in the worst case."
+// Pitfalls    (1) The code uses a post-increment operator 'count++' in the return statement, which returns the original value of count instead of the updated total.  (2) The inner loop condition 'temp < array[j]' fails to account for stable sorting requirements if the problem required maintaining relative order of equal elements.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
