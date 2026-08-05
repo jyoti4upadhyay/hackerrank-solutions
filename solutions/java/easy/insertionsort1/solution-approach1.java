@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 12:55 a.m.
+// Technique   in-place-insertion-sort-simulation
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm maintains a sorted prefix by repeatedly shifting elements greater than the target value to the right until the correct insertion position is found.
+// Interview   Before: "I would implement a standard insertion sort." After: "I implemented the specific brute-force insertion required by the problem, which prints the array state at every shift, resulting in O(n^2) time complexity for the worst-case scenario where the target element is the smallest."
+// Pitfalls    (1) Failing to print the array state after every individual shift operation as required by the problem statement.  (2) Incorrectly handling the loop termination condition when the target element is smaller than all elements in the sorted portion.  (3) Overwriting the target element before it is stored in a temporary variable.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
