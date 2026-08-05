@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 01:27 a.m.
+// Technique   iterative-insertion-sort
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm maintains a sorted prefix of the array by repeatedly shifting elements larger than the current target value to the right and inserting the target into its correct sorted position.
+// Interview   Before: "How do you sort an array in-place while showing every step?" After: "I use insertion sort, which builds a sorted subarray by shifting elements. It has O(n^2) time complexity, which is acceptable for the given constraints, and I print the array state after each insertion as required."
+// Pitfalls    (1) Failing to print the array after every iteration starting from the second element as specified in the problem.  (2) Incorrectly handling the inner loop condition j >= 0, which leads to an ArrayIndexOutOfBoundsException when the target element is smaller than all elements in the sorted prefix.  (3) Using an incorrect loop range for the outer loop, which must start at index 1 to correctly process the array.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
