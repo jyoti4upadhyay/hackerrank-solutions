@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 03:05 a.m.
+// Technique   three-list-partitioning
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm partitions the input list into three distinct collections based on the pivot element at index zero and concatenates them into a single result list.
+// Interview   Before: "I would use a nested loop to sort the array in place." After: "I implemented a linear O(n) partition by iterating once from index one, which is optimal for this specific problem constraint where the pivot is always the first element."
+// Pitfalls    (1) Including the pivot element in the left or right lists instead of the equal list.  (2) Starting the iteration from index zero instead of index one, which causes the pivot to be incorrectly compared against itself.  (3) Failing to maintain the relative order of elements in the left and right lists as required by the problem's flexible checker.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
