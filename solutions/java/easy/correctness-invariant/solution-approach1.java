@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 01:31 a.m.
+// Technique   insertion-sort-in-place
+// Time        O(n^2)
+// Space       O(1)
+// Insight     At the start of each outer loop iteration, the subarray from index zero to i-1 is maintained in sorted order by shifting larger elements to the right.
+// Interview   Before: "I would implement a nested loop to compare and swap elements." After: "I implemented an insertion sort that maintains a sorted prefix, achieving O(n^2) time complexity, which is efficient for small or nearly sorted arrays."
+// Pitfalls    (1) Incorrectly initializing the inner loop index j to i instead of i-1, which causes an unnecessary comparison with the element being inserted.  (2) Failing to include the j >= 0 condition in the while loop, leading to an ArrayIndexOutOfBoundsException when the value is smaller than all elements in the sorted prefix.  (3) Printing the array inside the outer loop instead of after the sorting process completes, violating the requirement to print only once.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
