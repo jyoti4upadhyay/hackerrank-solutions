@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-05, 11:29 p.m.
+// Technique   hash-set-character-lookup
+// Time        O(N + M)
+// Space       O(1)
+// Insight     The algorithm determines if two strings share a common substring by checking if any character from the first string exists in the second string using a hash set.
+// Interview   Before: "I would compare every character of s1 with every character of s2." After: "I can optimize this to O(N + M) time by storing characters of s1 in a hash set, allowing O(1) lookups for each character in s2, which is efficient given the alphabet size is constant."
+// Pitfalls    (1) Assuming the strings contain characters outside the ascii[a-z] range, which contradicts the problem constraints.  (2) Failing to account for the O(1) space complexity, as the hash set size is bounded by the constant alphabet size of 26.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
