@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 02:35 a.m.
+// Technique   nested-loop-bubble-sort
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm performs a fixed number of passes over the array, incrementing a counter whenever an adjacent pair is found in decreasing order and swapped.
+// Interview   Before: "I would use a built-in sort method to handle this." After: "The problem requires implementing the specific bubble sort logic provided, which has O(n^2) time complexity, to track the exact number of swaps performed during the sorting process."
+// Pitfalls    (1) Failing to initialize the swap counter variable before the nested loops.  (2) Using an incorrect loop boundary for the inner loop, which causes an ArrayIndexOutOfBoundsException when accessing index j+1.  (3) Printing the output in a format that deviates from the exact string requirements specified in the problem statement.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
