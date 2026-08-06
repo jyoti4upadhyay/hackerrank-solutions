@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 04:38 p.m.
+// Technique   linear-scan-partitioning
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm iterates through the input array once, categorizing elements into three separate lists based on their comparison to the pivot element at index zero.
+// Interview   Before: "I would implement an in-place partition using two pointers to swap elements." After: "Since the problem requires returning a new list structure, I used three auxiliary lists to achieve O(n) time complexity while maintaining the relative partitioning logic required by the problem statement."
+// Pitfalls    (1) Failing to include the pivot element in the final returned list, as the problem requires the pivot to be placed between the left and right partitions.  (2) Incorrectly handling the loop range, as the code must iterate through all elements including the pivot to correctly populate the left and right lists.  (3) Assuming the pivot must be removed from the input array before partitioning, whereas the code simply skips the pivot during the comparison loop.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
