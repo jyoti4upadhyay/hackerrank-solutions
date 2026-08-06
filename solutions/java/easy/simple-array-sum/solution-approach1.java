@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-06, 04:49 p.m.
+// Technique   linear-summation-loop
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains a running total by iterating through the list exactly once, adding each element to the accumulator until the end of the list is reached.
+// Interview   Before: "I would use a recursive approach to sum the elements." After: "A simple iterative loop is more efficient here, providing O(n) time complexity and O(1) auxiliary space, which is optimal for processing the entire array once."
+// Pitfalls    (1) Integer overflow may occur if the sum of the array elements exceeds the maximum value of a 32-bit signed integer.  (2) The implementation assumes the input list is non-null and contains valid integers as per the problem constraints.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
