@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-07, 11:12 a.m.
+// Technique   array-reversal-rotation
+// Time        O(n + q)
+// Space       O(n + q)
+// Insight     The implementation achieves a right circular rotation by reversing the entire array and then reversing the two segments defined by the effective rotation count k modulo n.
+// Interview   Before: "I would simulate the rotation by shifting elements one by one in a loop." After: "I optimized the rotation to O(n) by using array reversal properties, which avoids redundant shifts and handles large k values efficiently, resulting in O(n + q) total time complexity."
+// Pitfalls    (1) Failing to apply the modulo operator k % a.size() causes index out of bounds errors when k exceeds the array length.  (2) Incorrectly calculating the split point for the two segments during the reversal process leads to an improperly rotated array.  (3) Assuming the input array size is always greater than zero without verifying constraints can cause runtime exceptions.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
