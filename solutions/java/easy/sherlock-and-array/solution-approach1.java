@@ -7,6 +7,11 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-07, 01:21 p.m.
+// Technique   prefix-sum-tracking
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm maintains a running left sum and a decreasing right sum, checking for equality at each index after subtracting the current element from the total sum.
+// Pitfalls    (1) Failing to initialize the right sum as the total sum minus the current element before the equality check.  (2) Incorrectly updating the left sum before checking the equality condition, which violates the requirement that the current element is excluded from both sides.  (3) Assuming the array must have more than one element, whereas the logic correctly handles single-element arrays by comparing zero to zero.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
