@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 01:08 a.m.
+// Technique   sorting-and-linear-summation
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The algorithm sorts the input array to identify the four smallest elements for the minimum sum and the four largest elements for the maximum sum.
+// Interview   Before: "I could iterate through the array five times, each time excluding one element to find the sums." After: "Sorting the array allows me to compute both sums in O(N log N) time, ensuring I handle the 64-bit integer requirement for large sums correctly."
+// Pitfalls    (1) Failing to use long integers for the sum variables will cause integer overflow given the constraints.  (2) Assuming the input array is already sorted leads to incorrect minimum and maximum calculations.  (3) Using a fixed loop size of 4 without sorting the array first fails to identify the correct subset of elements.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
