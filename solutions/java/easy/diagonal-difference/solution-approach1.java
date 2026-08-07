@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 12:15 a.m.
+// Technique   nested-loop-and-index-decrement
+// Time        O(n^2)
+// Space       O(1)
+// Insight     The primary diagonal sum is calculated using a nested loop where row index equals column index, while the secondary diagonal sum is computed in a single pass by decrementing the column index.
+// Interview   Before: "I would iterate through the matrix twice to find both diagonal sums." After: "I can optimize the secondary diagonal calculation to O(n) by using a single loop with a decrementing index, resulting in an overall O(n^2) time complexity for the matrix traversal."
+// Pitfalls    (1) The nested loop for the primary diagonal performs unnecessary O(n^2) iterations instead of O(n).  (2) The secondary diagonal index j must be initialized to arr.size() - 1 to correctly access elements from the top-right to the bottom-left.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
