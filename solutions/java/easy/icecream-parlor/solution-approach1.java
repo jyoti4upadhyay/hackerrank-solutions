@@ -6,13 +6,7 @@
 // Platform    HackerRank
 // Language    java
 // Status      Accepted
-// Submitted   2026-08-05, 04:27 p.m.
-// Technique   nested-loop-brute-force
-// Time        O(n^2)
-// Space       O(1)
-// Insight     The algorithm iterates through all unique pairs of ice cream flavors to identify the two distinct indices whose costs sum exactly to the target amount m.
-// Interview   Before: "I will use a hash map to store costs and find the complement in O(n) time." After: "Given the constraints and the requirement for 1-based indexing, a nested loop approach provides a simple O(n^2) solution that correctly identifies the unique pair of indices for the given target sum."
-// Pitfalls    (1) The nested loop approach has O(n^2) time complexity, which may exceed time limits for larger input sizes.  (2) The implementation assumes a unique solution exists as per the problem statement, which is required for the logic to return exactly two indices.
+// Submitted   2026-08-07, 11:15 a.m.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
