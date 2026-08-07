@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-07, 04:37 p.m.
+// Technique   frequency-map-difference
+// Time        O(n + m)
+// Space       O(n + m)
+// Insight     The algorithm calculates the frequency difference between the two lists by incrementing counts for the first list and decrementing for the second, identifying missing numbers as those with non-zero final frequencies.
+// Interview   Before: "I would sort both arrays and compare them linearly." After: "Sorting takes O(N log N), but using a frequency map allows us to solve this in O(N + M) time, which is optimal given the constraints on the range of values."
+// Pitfalls    (1) The implementation fails to return the result in ascending order as required by the problem statement.  (2) The logic incorrectly identifies numbers present in the first array but not the second as missing, violating the requirement to only find elements missing from the first array.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
