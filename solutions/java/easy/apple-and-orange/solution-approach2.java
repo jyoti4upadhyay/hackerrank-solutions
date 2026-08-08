@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 08:21 p.m.
+// Technique   linear-scan-coordinate-mapping
+// Time        O(m + n)
+// Space       O(m + n)
+// Insight     The algorithm calculates the absolute landing position of each fruit by adding its displacement to the tree's origin and checks if the result falls within the inclusive range [s, t].
+// Interview   Before: "I would sort the fruit positions to use binary search." After: "Sorting is unnecessary because we only need to check each fruit once, resulting in O(m + n) time complexity, which is optimal for processing all m apples and n oranges."
+// Pitfalls    (1) Failing to use an inclusive range check [s, t] as defined in the problem statement.  (2) Incorrectly assuming the tree position a or b is always zero, ignoring the provided tree coordinates.  (3) Misinterpreting negative displacement values, which correctly represent distance to the left of the tree.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
