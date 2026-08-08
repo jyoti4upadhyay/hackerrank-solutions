@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 09:54 p.m.
+// Technique   linear-scan-tracking-extremes
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains the current maximum and minimum scores, incrementing respective counters only when a new game score strictly exceeds or falls below the established season records.
+// Interview   Before: "I could sort the list to find the min and max." After: "Sorting is unnecessary; a single linear scan in O(n) time is sufficient to track record changes, as the problem requires comparing each game against the running extreme values established by the first game."
+// Pitfalls    (1) The code incorrectly includes redundant comparisons with the previous game score instead of comparing directly against the current record.  (2) The logic fails to account for cases where a score equals the current record, as the problem requires a strictly greater or lesser value to count as a break.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
