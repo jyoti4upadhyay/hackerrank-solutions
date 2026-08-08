@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-09, 01:24 a.m.
+// Technique   sorting-and-linear-scan
+// Time        O(n log n)
+// Space       O(n)
+// Insight     The algorithm sorts the sock colors to group identical values, then iterates through the array to count pairs by skipping two indices upon finding a match.
+// Interview   Before: "I would use a hash map to count frequencies of each color." After: "Sorting the array allows for an O(n log n) time and O(n) space solution, which efficiently identifies pairs by comparing adjacent elements in the sorted list."
+// Pitfalls    (1) Failing to handle the case where n is 0 or 1, which results in zero pairs.  (2) Incorrectly incrementing the index by 1 instead of 2 when a pair is found, leading to double-counting.  (3) Assuming the input list is already sorted, which would cause the linear scan to miss non-adjacent matching pairs.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
