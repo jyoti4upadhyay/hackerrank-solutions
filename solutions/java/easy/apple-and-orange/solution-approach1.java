@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 10:54 a.m.
+// Technique   linear-scan-range-check
+// Time        O(m + n)
+// Space       O(m + n)
+// Insight     The algorithm calculates the absolute landing position of each fruit by adding its displacement to the tree's coordinate and verifies if the result falls within the inclusive range [s, t].
+// Interview   Before: "I would calculate the landing position for every fruit and check if it is between s and t." After: "I iterate through both lists once, resulting in O(m + n) time complexity, where m and n are the counts of apples and oranges, respectively, ensuring each fruit is checked against the inclusive house boundaries."
+// Pitfalls    (1) Failing to account for the inclusive nature of the range [s, t] by using strict inequality operators.  (2) Assuming the apple tree is always to the left of the house and the orange tree is always to the right, which may lead to incorrect displacement logic if not handled by simple addition.  (3) Neglecting to handle negative displacement values correctly, which represent fruits falling to the left of the tree.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
