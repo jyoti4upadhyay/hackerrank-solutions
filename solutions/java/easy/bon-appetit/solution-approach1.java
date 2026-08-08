@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-09, 01:39 a.m.
+// Technique   linear-sum-exclusion
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm calculates the total cost of all items excluding the one at index k and compares half of that sum against the amount Anna contributed.
+// Interview   Before: "I would iterate through the list and sum everything." After: "I iterate once in O(n) time to sum all items except the one at index k, then compare the result to the contribution to determine if a refund is needed."
+// Pitfalls    (1) Failing to exclude the item at index k correctly by using an incorrect loop condition.  (2) Assuming the division by two will always result in an integer without considering the problem constraint that the refund is always an integer.  (3) Printing the wrong output format when the bill is split fairly versus when a refund is required.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
