@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 11:59 p.m.
+// Technique   nested-loop-brute-force
+// Time        O(n * m)
+// Space       O(1)
+// Insight     The algorithm iterates through every possible pair of keyboard and drive prices to identify the maximum sum that does not exceed the budget.
+// Interview   Before: "I could sort both arrays and use two pointers to find the sum in O(n log n + m log m)." After: "Since the constraints are small, a nested loop approach provides an O(n * m) solution that is simple to implement and sufficient for the given input size."
+// Pitfalls    (1) Returning 0 instead of -1 when no combination is within the budget, as the problem explicitly requires -1 for impossible purchases.  (2) Failing to initialize maxCost to 0, which would incorrectly handle cases where the only valid purchase is 0 if prices were allowed to be zero.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
