@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 11:37 p.m.
+// Technique   absolute-difference-comparison
+// Time        O(q)
+// Space       O(1)
+// Insight     The solution determines the winner by comparing the absolute distances of each cat from the mouse, where the smaller distance indicates the faster arrival time.
+// Interview   Before: "How would you determine which cat reaches the mouse first?" After: "I calculate the absolute difference between each cat's position and the mouse's position. Comparing these O(1) distances per query allows me to solve the problem in O(q) time, correctly handling the tie condition where both cats arrive simultaneously."
+// Pitfalls    (1) Failing to use Math.abs() results in incorrect distance calculations when a cat's position is less than the mouse's position.  (2) Incorrectly ordering the conditional checks for Cat A and Cat B leads to returning the wrong string for the given distances.  (3) Neglecting the tie condition where both cats are equidistant from the mouse results in failing to return 'Mouse C'.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
