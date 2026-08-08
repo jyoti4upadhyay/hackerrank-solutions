@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-08, 11:06 p.m.
+// Technique   hash-map-frequency-counting
+// Time        O(n)
+// Space       O(k)
+// Insight     The algorithm counts occurrences of each bird type in a hash map, identifies the maximum frequency, and then selects the smallest key among those matching that maximum frequency.
+// Interview   Before: "I would sort the array and count consecutive elements." After: "Sorting takes O(n log n), but using a hash map to count frequencies allows us to solve this in O(n) time and O(k) space, where k is the number of unique bird types."
+// Pitfalls    (1) Failing to handle the requirement to return the smallest ID when multiple types share the maximum frequency.  (2) Assuming the bird IDs are contiguous or start from 1, though the hash map approach correctly handles any integer IDs.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
