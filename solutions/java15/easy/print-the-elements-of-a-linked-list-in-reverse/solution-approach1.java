@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-09, 11:26 p.m.
+// Technique   iterative-list-reversal-and-traversal
+// Time        O(n)
+// Space       O(1)
+// Insight     The implementation reverses the singly-linked list in-place by reassigning node pointers and then traverses the modified list to print each data element.
+// Interview   Before: "I would use a stack to store elements and pop them to print in reverse." After: "I reversed the list in-place to achieve O(n) time and O(1) space, which is more memory-efficient than using a stack for large lists."
+// Pitfalls    (1) Modifying the original list structure permanently may cause side effects if the list is needed in its original order later.  (2) Failing to handle the null head case correctly could lead to a NullPointerException during the initial traversal.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
