@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 12:11 a.m.
+// Technique   parallel-traversal-comparison
+// Time        O(min(N, M))
+// Space       O(1)
+// Insight     The algorithm traverses both lists simultaneously, returning false if data mismatches occur or if one list terminates before the other.
+// Interview   Before: "I would compare the lists by calculating their lengths first." After: "I can optimize this to O(min(N, M)) time and O(1) space by traversing both lists in parallel, ensuring both reach null simultaneously to confirm equal length and content."
+// Pitfalls    (1) Failing to verify that both pointers are null after the loop, which incorrectly identifies lists of different lengths as equal.  (2) Accessing the data attribute of a null pointer if the loop condition is not strictly checked.
 // ──────────────────────────────────────────────────
 
 
