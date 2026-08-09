@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 01:01 a.m.
+// Technique   two-pass-length-calculation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm determines the target node's index from the head by subtracting the position from the tail plus one from the total list length.
+// Interview   Before: "I could use a stack or recursion to reverse the list traversal." After: "I calculated the list length first to find the target index in O(n) time and O(1) space, ensuring I correctly handle the zero-based position from the tail."
+// Pitfalls    (1) The loop condition pos < posfromhead && pos != posfromhead is redundant and potentially confusing for standard index-based traversal.  (2) The implementation assumes the positionFromTail is always valid and within the bounds of the linked list length.
 // ──────────────────────────────────────────────────
 
 
