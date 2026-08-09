@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-09, 11:04 p.m.
+// Technique   iterative-pointer-traversal
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm traverses to the node immediately preceding the target position and updates its next pointer to bypass the node at the specified index.
+// Interview   Before: "How do I remove a node at a specific index?" After: "I traverse to the node at position-1 and re-link its next pointer to skip the target. This runs in O(n) time and O(1) space, handling the head removal as a special case."
+// Pitfalls    (1) Failing to handle the head removal case where position is zero, which would cause a NullPointerException if attempting to access curr.next.  (2) Assuming the list has enough nodes to reach position-1, which leads to a NullPointerException when accessing curr.next.next if the position is out of bounds.
 // ──────────────────────────────────────────────────
 
 
