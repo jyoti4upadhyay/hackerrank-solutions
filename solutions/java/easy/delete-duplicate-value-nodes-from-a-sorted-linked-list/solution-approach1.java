@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 02:02 a.m.
+// Technique   two-pointer-traversal
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains a current node and a look-ahead pointer to skip consecutive nodes with identical data values until a new value is encountered or the list ends.
+// Interview   Before: "How do you remove duplicates from a sorted linked list?" After: "Since the list is sorted, I use two pointers to compare adjacent nodes. If they match, I skip the duplicate; otherwise, I advance. This O(n) approach handles empty lists and lists with all identical values correctly."
+// Pitfalls    (1) Failing to handle the null head case, which causes a NullPointerException on llist.next.  (2) Neglecting to terminate the list by setting curr.next to null after the loop finishes, which leaves trailing duplicates in the final list.  (3) Incorrectly updating the curr pointer before the look-ahead pointer, which breaks the link between distinct values.
 // ──────────────────────────────────────────────────
 
 
