@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-09, 08:40 p.m.
+// Technique   nested-loop-string-comparison
+// Time        O(N * M * L)
+// Space       O(Q)
+// Insight     The algorithm iterates through each query string and performs a full linear scan of the input list to count occurrences using string equality.
+// Interview   Before: "I could use a nested loop to compare every query against every input string." After: "This approach has O(N * M * L) time complexity, where N is the number of input strings, M is the number of queries, and L is the average string length, which is inefficient for large inputs."
+// Pitfalls    (1) The nested loop approach results in O(N * M) complexity, which may exceed time limits for large input sizes.  (2) Using .equals() for string comparison is necessary in Java, as == only checks for reference equality.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
