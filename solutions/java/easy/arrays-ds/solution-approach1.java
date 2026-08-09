@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-09, 08:09 p.m.
+// Technique   new-list-reverse-iteration
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation constructs a new list by traversing the input list from the last index down to zero.
+// Interview   Before: "I could reverse the list in-place using two pointers to save space." After: "I chose to create a new list by iterating backwards, which results in O(N) time and O(N) space complexity, effectively handling the input array of size N."
+// Pitfalls    (1) Iterating from a.size() instead of a.size()-1 causes an IndexOutOfBoundsException.  (2) Failing to handle an empty input list might lead to unexpected behavior if the loop condition is not strictly i >= 0.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
