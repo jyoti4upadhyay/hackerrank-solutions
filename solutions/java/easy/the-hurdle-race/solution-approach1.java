@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 03:21 a.m.
+// Technique   linear-scan-max-finding
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm identifies the maximum hurdle height and calculates the difference from the character's natural jump capacity, returning zero if the capacity is already sufficient.
+// Interview   Before: "I should sort the list to find the tallest hurdle." After: "Sorting is unnecessary; a single O(n) linear scan to find the maximum value is sufficient to determine the required doses, ensuring optimal O(n) time and O(1) space complexity."
+// Pitfalls    (1) Returning a negative value if the maximum hurdle height is less than k, which violates the requirement that the result must be 0 or more.  (2) Initializing the maximum variable to 0 instead of Integer.MIN_VALUE, which would fail if all hurdle heights were negative.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
