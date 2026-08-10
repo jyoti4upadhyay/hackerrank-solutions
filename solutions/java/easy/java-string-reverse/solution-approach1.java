@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 11:38 a.m.
+// Technique   recursive-two-pointers
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm recursively compares characters at symmetric indices, terminating with 'Yes' if the pointers cross or meet, or 'No' if a mismatch is detected.
+// Interview   Before: 'I would use a loop to check for palindromes.' After: 'I implemented a recursive approach with O(n) time and O(n) stack space, which correctly handles the base case where start meets or crosses end.'
+// Pitfalls    (1) The recursion depth reaches O(n) for long strings, potentially causing a StackOverflowError on very large inputs.  (2) The base case start >= end correctly identifies single-character strings or empty segments as palindromes.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
