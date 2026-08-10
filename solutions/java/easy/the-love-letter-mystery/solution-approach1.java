@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 02:42 a.m.
+// Technique   two-pointers-character-difference
+// Time        O(n)
+// Space       O(1)
+// Insight     The minimum number of operations to make a string a palindrome is the sum of the absolute differences between characters at symmetric positions from the ends.
+// Interview   Before: "I would use a stack to reverse the string and compare." After: "I can use two pointers to compare symmetric characters in O(n) time and O(1) space, calculating the absolute difference for each pair to find the total operations."
+// Pitfalls    (1) Failing to account for the absolute difference between characters, which is required because only reductions are allowed.  (2) Incorrectly assuming that characters can be increased, violating the rule that only reductions are permitted.  (3) Mismanaging the loop termination condition, which must stop when pointers meet or cross to avoid double-counting the middle character in odd-length strings.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
