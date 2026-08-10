@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 06:32 p.m.
+// Technique   brute-force-range-scan
+// Time        O(N*M + (max(B)-max(A))*N)
+// Space       O(max(B)-max(A))
+// Insight     The algorithm identifies all integers between the maximum of array a and the minimum of array b that are multiples of all elements in a and divisors of all elements in b.
+// Interview   Before: "I would iterate through all numbers from the max of a to the min of b." After: "I check each candidate against both arrays, resulting in O(N*M + (max(B)-max(A))*N) time complexity, which is efficient given the constraints on array values."
+// Pitfalls    (1) The range scan assumes the solution must lie between the maximum of a and the minimum of b, which is correct but potentially inefficient for large ranges.  (2) The code fails to handle cases where the maximum of a is greater than the minimum of b, potentially leading to an empty loop range.  (3) The implementation performs redundant checks by iterating through the entire range and then filtering the results, rather than combining the conditions.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
