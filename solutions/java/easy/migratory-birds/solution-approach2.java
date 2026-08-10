@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 11:14 p.m.
+// Technique   hash-map-frequency-counting
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm tracks bird sighting frequencies in a hash map and iterates through the keys to identify the smallest ID associated with the maximum frequency.
+// Interview   Before: "I would sort the array first to handle the tie-breaking rule." After: "Using a hash map allows O(n) time complexity, and by checking the key during the frequency comparison, I ensure the smallest ID is returned when counts are equal, maintaining O(1) auxiliary space since there are only five bird types."
+// Pitfalls    (1) Failing to handle the tie-breaking rule where the smallest ID must be returned when frequencies are equal.  (2) Assuming the input array is sorted, which is not guaranteed by the problem statement.  (3) Using an inefficient data structure that increases time complexity beyond O(n) for large input sizes.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
