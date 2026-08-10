@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 12:02 a.m.
+// Technique   linear-scan-search
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm performs a linear search through the sorted list to identify the index where the target value V matches the current element.
+// Interview   Before: "I would use binary search to find the index in O(log n) time." After: "Since the constraints are small (n ≤ 1000), a linear scan with O(n) time complexity is sufficient to locate the unique element V as specified in the problem statement."
+// Pitfalls    (1) Assuming binary search is required when the constraints n ≤ 1000 allow for a simpler O(n) linear scan.  (2) Failing to account for the zero-based indexing requirement explicitly mentioned in the problem statement.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
