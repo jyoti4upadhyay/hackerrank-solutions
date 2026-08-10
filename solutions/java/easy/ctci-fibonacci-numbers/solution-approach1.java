@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 10:54 a.m.
+// Technique   naive-recursive-fibonacci
+// Time        O(2^n)
+// Space       O(n)
+// Insight     The function computes the nth Fibonacci number by recursively summing the results of the two preceding indices until reaching the base cases of zero or one.
+// Interview   Before: "I will implement the Fibonacci sequence using a simple recursive approach." After: "This naive recursive solution has O(2^n) time complexity due to redundant calculations, which is inefficient for large n compared to iterative or memoized approaches."
+// Pitfalls    (1) The exponential time complexity O(2^n) causes a timeout for larger values of n.  (2) The recursive stack depth reaches O(n), which may lead to a StackOverflowError for very large inputs.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
