@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-10, 10:38 a.m.
+// Technique   recursive-factorial-base-case
+// Time        O(n)
+// Space       O(n)
+// Insight     The function computes the factorial of n by recursively multiplying n with the result of the factorial of n minus one until the base case of one is reached.
+// Interview   Before: "How would you implement a factorial function using recursion?" After: "I implemented it by defining a base case at n equals one and a recursive step that multiplies n by the result of the function called with n minus one, resulting in O(n) time and space complexity."
+// Pitfalls    (1) The implementation fails to handle n equals zero, which is mathematically defined as one but is not covered by the n equals one base case.  (2) The recursion depth is proportional to n, which may cause a StackOverflowError for very large input values.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
