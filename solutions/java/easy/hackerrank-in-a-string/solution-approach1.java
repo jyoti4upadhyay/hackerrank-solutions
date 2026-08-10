@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 01:27 a.m.
+// Technique   stack-based-subsequence-matching
+// Time        O(N)
+// Space       O(1)
+// Insight     The algorithm uses a stack to store the target string in reverse order, allowing it to greedily match characters from the input string as they appear in the correct sequence.
+// Interview   Before: "I would use a pointer to track the target string index." After: "Using a stack simplifies the logic to O(N) time and O(1) space, as the target string length is constant, ensuring we only pop when the current character matches the top of the stack."
+// Pitfalls    (1) Failing to account for the stack being empty before calling peek, though the loop condition prevents this.  (2) Assuming the input string length is smaller than the target string, which would result in an incorrect NO return.  (3) Misinterpreting the subsequence requirement by failing to maintain the relative order of characters.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
