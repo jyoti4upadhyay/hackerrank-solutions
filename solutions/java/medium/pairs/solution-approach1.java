@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 03:34 p.m.
+// Technique   hash-set-lookup
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm identifies pairs by storing all array elements in a hash set and checking for the existence of each element plus the target difference k.
+// Interview   Before: "I could use nested loops to check every pair." After: "Using a HashSet allows O(n) time complexity by performing constant-time lookups for each element's complement, which is efficient given the unique integer constraint."
+// Pitfalls    (1) Failing to account for the O(n) space complexity required by the HashSet when memory constraints are tight.  (2) Assuming the input array is sorted, which is not guaranteed by the problem statement.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
