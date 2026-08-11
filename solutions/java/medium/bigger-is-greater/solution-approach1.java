@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 02:47 a.m.
+// Technique   next-lexicographical-permutation
+// Time        O(N)
+// Space       O(N)
+// Insight     The algorithm identifies the rightmost character that is smaller than its successor, swaps it with the smallest character to its right that is larger, and reverses the remaining suffix to achieve the next lexicographical permutation.
+// Interview   Before: "How do I find the next permutation of a string?" After: "By scanning from right to left to find the first pivot, swapping it with the smallest larger element, and reversing the suffix, we achieve the next lexicographical string in O(N) time, handling cases with no answer when the string is non-increasing."
+// Pitfalls    (1) Failing to handle the case where the entire string is in descending order, which requires returning no answer.  (2) Incorrectly identifying the pivot point by using an improper comparison operator in the first while loop.  (3) Forgetting to reverse the suffix after the swap, which prevents the result from being the smallest possible lexicographical increase.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
