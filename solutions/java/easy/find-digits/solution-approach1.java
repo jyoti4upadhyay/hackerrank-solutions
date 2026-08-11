@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 01:26 a.m.
+// Technique   modulo-digit-extraction
+// Time        O(d) where d is the number of digits in…
+// Space       O(1)
+// Insight     The algorithm iteratively extracts each digit of the integer using modulo arithmetic and increments a counter if the digit is non-zero and evenly divides the original number.
+// Interview   Before: "I could convert the integer to a string to iterate through digits." After: "Using modulo and division is more efficient as it avoids string allocation, achieving O(d) time complexity where d is the number of digits, while correctly handling the division-by-zero constraint."
+// Pitfalls    (1) Failing to explicitly check for zero digits, which causes an ArithmeticException due to division by zero.  (2) Modifying the original input variable n instead of using a copy, which prevents the modulo check against the original value.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
