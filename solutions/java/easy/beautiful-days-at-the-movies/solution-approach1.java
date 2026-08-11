@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-11, 11:17 p.m.
+// Technique   integer-reversal-simulation
+// Time        O((j-i) * log10(j))
+// Space       O(1)
+// Insight     The algorithm iterates through the inclusive range [i, j], calculating the reverse of each integer using modulo and division operations to verify the divisibility condition against k.
+// Interview   Before: "I would convert the integer to a string to reverse it." After: "Using arithmetic operations to reverse the integer is more efficient, resulting in O((j-i) * log10(j)) time complexity, which is optimal for the given constraints."
+// Pitfalls    (1) Failing to include the upper bound j in the loop, as the problem specifies an inclusive range [i, j].  (2) Assuming the reverse of a number with trailing zeros, like 120, is 021 rather than 21, which the arithmetic approach handles correctly.  (3) Neglecting the absolute value requirement when calculating the difference between the number and its reverse.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
