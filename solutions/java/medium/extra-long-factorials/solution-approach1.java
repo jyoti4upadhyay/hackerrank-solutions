@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 01:34 a.m.
+// Technique   big-integer-iterative-multiplication
+// Time        O(n^2 log n)
+// Space       O(n log n)
+// Insight     The implementation iteratively computes the factorial by multiplying the current BigInteger accumulator by each integer from two up to n.
+// Interview   Before: "I would use a long variable to store the factorial." After: "Since n can be up to 100, the result exceeds 64-bit limits, so I used BigInteger to handle arbitrary-precision arithmetic, resulting in O(n^2 log n) time complexity due to the cost of multiplying large numbers."
+// Pitfalls    (1) Using primitive types like long or int will cause overflow for n > 20.  (2) Failing to initialize the BigInteger accumulator to BigInteger.ONE results in an incorrect product of zero.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
