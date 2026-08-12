@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 04:06 p.m.
+// Technique   lookup-table-conditional-mapping
+// Time        O(1)
+// Space       O(1)
+// Insight     The implementation maps integer inputs to predefined string arrays based on the minute value's relationship to the hour, handling the transition to the next hour when minutes exceed thirty.
+// Interview   Before: "How would you handle the transition to the next hour when minutes exceed thirty?" After: "I use a lookup table for numbers and conditional logic to handle the 'past' and 'to' cases, ensuring O(1) time complexity by directly indexing the arrays."
+// Pitfalls    (1) The code fails to handle the hour transition correctly when h is 12 and m > 30, as arr[h+1] will throw an ArrayIndexOutOfBoundsException.  (2) The output string for m=0 includes a trailing space, which may violate strict formatting requirements depending on the judge's whitespace sensitivity.  (3) The logic assumes h is always between 1 and 11 for the 'to' case, failing to reset the hour to one when the time is 12:45.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
