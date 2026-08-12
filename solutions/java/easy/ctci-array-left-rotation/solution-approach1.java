@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 10:52 a.m.
+// Technique   array-reversal-via-list-partitioning
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation achieves a left rotation by reversing the entire list and then partitioning the reversed elements into two sub-lists based on the rotation index d before concatenating them.
+// Interview   Before: "I would use a temporary array to shift elements one by one." After: "I can achieve O(n) time and O(n) space by reversing the list and partitioning it, which handles the circular shift efficiently even when d exceeds the array size n."
+// Pitfalls    (1) Failing to apply the modulo operator d = d % n, which causes index out of bounds errors when the number of rotations exceeds the array size.  (2) Incorrectly calculating the split indices for the left and right sub-lists, leading to an improper order of elements in the final rotated array.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
