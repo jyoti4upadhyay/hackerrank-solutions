@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-12, 01:44 p.m.
+// Technique   frequency-map-difference
+// Time        O(N + M + K log K)
+// Space       O(N + M)
+// Insight     The algorithm tracks frequency differences by incrementing counts for the first array and decrementing for the second, identifying missing numbers as those with a negative final frequency.
+// Interview   Before: "How would you identify missing elements with frequency constraints?" After: "I use a hash map to store frequency differences, which runs in O(N + M) time and O(N + M) space, then sort the result to meet the ascending order requirement."
+// Pitfalls    (1) Failing to account for the requirement that missing numbers must be returned in ascending order.  (2) Assuming that only numbers present in the first array can be missing, ignoring numbers present only in the second array.  (3) Neglecting the requirement to include each missing number only once in the final output.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
