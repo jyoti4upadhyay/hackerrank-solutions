@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 05:04 p.m.
+// Technique   grid-column-traversal
+// Time        O(L)
+// Space       O(L)
+// Insight     The algorithm calculates grid dimensions based on the square root of the string length and extracts characters by jumping across the string at intervals equal to the column count.
+// Interview   Before: "How do I map a 1D string to a 2D grid without creating an actual matrix?" After: "By using a stride equal to the column count, we can simulate column-major traversal in O(L) time, ensuring we handle the floor and ceiling constraints correctly."
+// Pitfalls    (1) The code fails to remove spaces from the input string as required by the problem statement.  (2) The grid dimensions calculation does not satisfy the condition rows * columns >= L when rows * columns < L.  (3) The trailing space added to the final result string is not explicitly handled or trimmed.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
