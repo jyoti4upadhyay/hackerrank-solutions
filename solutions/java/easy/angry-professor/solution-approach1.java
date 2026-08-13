@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 08:15 a.m.
+// Technique   linear-scan-counter
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm counts students with arrival times less than or equal to zero and compares this total against the threshold k to determine if the class is cancelled.
+// Interview   Before: "I could sort the arrival times to find the cutoff point." After: "Sorting is unnecessary; a single linear scan in O(n) time correctly identifies all students arriving on or before time zero, which is sufficient to compare against the threshold k."
+// Pitfalls    (1) Misinterpreting the condition a[i] <= 0 as only early arrivals, ignoring that on-time students are also included.  (2) Returning YES when the count of on-time students is exactly equal to k, violating the requirement that class is cancelled only if fewer than k students are present.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
