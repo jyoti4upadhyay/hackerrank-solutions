@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 10:57 p.m.
+// Technique   modular-arithmetic-string-counting
+// Time        O(L) where L is the length of string s
+// Space       O(1)
+// Insight     The total count of 'a' is derived by multiplying the full repetitions of the string by the count of 'a' in the base string, plus the count of 'a' in the remaining prefix.
+// Interview   Before: "I would iterate through the string n times to count 'a'." After: "That would be O(n) and exceed time limits for large n. Instead, I calculate the frequency in the base string in O(L) time and use modular arithmetic to find the total in O(1) additional space."
+// Pitfalls    (1) Using an integer instead of a long for the total count, which causes overflow when n is large.  (2) Failing to account for the remainder of n divided by the string length, leading to an incorrect count for partial repetitions.  (3) Assuming the string length is always greater than zero, which could cause a division by zero error if not handled.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
