@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 06:58 a.m.
+// Technique   sliding-window-brute-force
+// Time        O(n * m)
+// Space       O(1)
+// Insight     The algorithm iterates through all possible contiguous subarrays of length m and checks if their sum equals the target birth day d.
+// Interview   Before: "I could use a sliding window with a running sum to optimize this to O(n)." After: "The current O(n * m) approach is sufficient given the constraints, where n is the number of squares and m is the birth month, ensuring we correctly handle cases where m exceeds the list size."
+// Pitfalls    (1) Failing to handle the case where the birth month m is greater than the number of chocolate squares n.  (2) Incorrectly setting the outer loop boundary to s.size() instead of s.size() - m + 1, which causes an IndexOutOfBoundsException.  (3) Miscalculating the inner loop range, which must iterate exactly m-1 times to include the starting element in the sum.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
