@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 08:13 a.m.
+// Technique   linear-scan-max-tracking
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm calculates the highlighted area by identifying the maximum height among all characters in the input string and multiplying it by the string length.
+// Interview   Before: "I would iterate through the string and find the maximum height using a hash map." After: "Since the alphabet is fixed, I map each character to its index using ASCII subtraction, achieving O(n) time and O(1) space complexity by tracking the maximum height in a single pass."
+// Pitfalls    (1) Assuming character heights are 1-indexed instead of using the provided 0-indexed list mapping.  (2) Failing to account for the constant 1mm width of each character when calculating the final area.  (3) Using an incorrect character-to-index conversion by forgetting to subtract the ASCII value of 'a'.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
