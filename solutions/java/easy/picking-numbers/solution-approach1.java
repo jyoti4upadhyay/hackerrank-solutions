@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-13, 07:56 a.m.
+// Technique   sorting-and-nested-iteration
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm sorts the input array and iterates through each element to count how many subsequent elements maintain an absolute difference of at most one.
+// Interview   Before: "I would use a frequency array to count occurrences in O(n) time." After: "This implementation uses sorting and nested loops, resulting in O(n^2) time complexity, which is acceptable given the constraints on n, though it is less efficient than a linear frequency-based approach."
+// Pitfalls    (1) The code incorrectly adds the index j to the list instead of the value a.get(j), which will lead to incorrect length calculations.  (2) The nested loop logic fails to account for the case where the longest subarray starts at the final element of the sorted list.  (3) The implementation uses O(n) extra space per iteration to store the list, which is redundant for simply calculating the maximum length.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
