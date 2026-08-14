@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-15, 12:11 a.m.
+// Technique   iterative-wrapper-exchange
+// Time        O(log_m(n/c))
+// Space       O(1)
+// Insight     The total number of chocolates is calculated by summing initial purchases with subsequent exchanges, where each exchange cycle reduces the remaining wrapper count by a factor related to m.
+// Interview   Before: "I would use a recursive function to simulate the exchange process." After: "I implemented an iterative approach with O(log_m(n/c)) time complexity, ensuring the loop terminates correctly when the remaining wrappers fall below the exchange threshold m."
+// Pitfalls    (1) The special case handling for purchase equals m is logically redundant and potentially incorrect for cases where m is 1.  (2) The loop condition rem >= m fails to account for scenarios where m is 1, leading to an infinite loop.  (3) Integer division in the exchange logic may cause premature termination if the remainder logic is not strictly aligned with the problem's wrapper accumulation rules.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
