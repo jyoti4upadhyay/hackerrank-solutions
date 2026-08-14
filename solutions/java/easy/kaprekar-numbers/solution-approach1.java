@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-14, 02:33 p.m.
+// Technique   digit-splitting-math-simulation
+// Time        O((q-p) * log10(q^2))
+// Space       O(q-p)
+// Insight     The algorithm determines if a number is a modified Kaprekar number by squaring it and splitting the result into two parts using a power-of-ten divisor based on the original number's digit count.
+// Interview   Before: I would use string conversion to split the square. After: I used modulo and division by 10^d to extract the right and left parts, which is more efficient at O(log10(q^2)) per number, ensuring we handle the range [p, q] correctly.
+// Pitfalls    (1) Using int instead of long for the square calculation will cause integer overflow for numbers larger than 46340.  (2) Failing to handle the case where the split results in a zero left part, which is correctly managed by the loop logic.  (3) Printing an extra space after the last number in the list, though the problem statement implies a space-separated format.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
