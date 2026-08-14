@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-14, 11:44 a.m.
+// Technique   nested-loop-frequency-counting
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm identifies the most frequent element by comparing every pair of integers in the array and calculates the minimum deletions as the difference between the total array size and the maximum frequency found.
+// Interview   Before: "I could use a hash map to count frequencies in linear time." After: "This nested loop approach achieves the goal by checking every element against all others, resulting in O(n^2) time complexity, which is acceptable given the constraints on n."
+// Pitfalls    (1) The O(n^2) time complexity may exceed execution time limits for large input sizes defined in the constraints.  (2) Creating a new ArrayList inside the outer loop for every element is memory-inefficient and unnecessary for simply counting frequencies.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
