@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-14, 03:22 p.m.
+// Technique   nested-loop-brute-force
+// Time        O(n^2)
+// Space       O(1)
+// Insight     The algorithm iterates through all possible pairs of indices to identify matching elements and tracks the minimum absolute difference between their positions.
+// Interview   Before: "I could use a nested loop to compare every pair." After: "This O(n^2) approach checks every pair for equality, returning -1 if no matches are found, which satisfies the problem constraints for n up to 1000."
+// Pitfalls    (1) Failing to initialize the minimum distance variable to Integer.MAX_VALUE, which prevents correct identification of the first valid pair found.  (2) Returning 0 instead of -1 when no matching elements exist, violating the problem requirement for the no-match case.  (3) Using the == operator instead of .equals() for Integer objects, which may fail for values outside the integer cache range.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
