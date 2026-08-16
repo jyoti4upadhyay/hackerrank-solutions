@@ -6,13 +6,7 @@
 // Platform    HackerRank
 // Language    java
 // Status      Accepted
-// Submitted   2026-08-16, 10:16 a.m.
-// Technique   stack-based-character-reduction
-// Time        O(n)
-// Space       O(n)
-// Insight     The algorithm maintains a stack where each character is pushed unless it matches the top element, in which case the pair is removed to satisfy the reduction rule.
-// Interview   Before: "I would use a nested loop to repeatedly scan and remove adjacent duplicates." After: "Using a stack allows us to process the string in a single O(n) pass, efficiently handling the reduction by comparing each character to the stack top, which is optimal for this problem."
-// Pitfalls    (1) Failing to handle the empty stack case after all reductions, which must return the string 'Empty String' instead of an empty sequence.  (2) Incorrectly reversing the stack contents when building the final string, as the stack pops elements in reverse order of their appearance.
+// Submitted   2026-08-16, 09:39 p.m.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
