@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-16, 11:16 a.m.
+// Technique   sorting-and-linear-scan
+// Time        O(n log n)
+// Space       O(n)
+// Insight     Sorting the array ensures that the minimum absolute difference must exist between adjacent elements, allowing a two-pass linear scan to identify all pairs with that minimum difference.
+// Interview   Before: "I could compare every pair in O(n^2) time." After: "By sorting the array first, I reduce the search to O(n log n) time, which is efficient enough for the given constraints where n is up to 200,000."
+// Pitfalls    (1) The code uses Math.abs in the first pass but relies on arr.get(i+1) - arr.get(i) in the second, which assumes the array is sorted in ascending order.  (2) The condition minD > 0 in the first pass is redundant because the problem constraints state all integers are unique, ensuring the minimum difference is always at least 1.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
