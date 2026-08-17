@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-17, 03:43 p.m.
+// Technique   stack-based-subsequence-matching
+// Time        O(N)
+// Space       O(N)
+// Insight     The algorithm uses a stack to reverse the input string, allowing it to greedily match characters of the target word in their original relative order by popping from the stack.
+// Interview   Before: "I would iterate through the string and keep track of the target index." After: "I used a stack to reverse the input, which allows O(N) time complexity to verify the subsequence by popping characters until a match is found for each target character."
+// Pitfalls    (1) The stack approach consumes O(N) space to store all characters of the input string, which may be inefficient for very large strings.  (2) The string concatenation st = st + top inside the loop creates new string objects, potentially leading to O(M^2) overhead where M is the length of the target word.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
