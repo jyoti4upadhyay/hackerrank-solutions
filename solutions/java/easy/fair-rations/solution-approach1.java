@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-18, 01:01 p.m.
+// Technique   greedy-linear-parity-adjustment
+// Time        O(N)
+// Space       O(1)
+// Insight     The algorithm iterates through the list and greedily increments the current element and its successor whenever an odd value is encountered, ensuring parity is satisfied sequentially.
+// Interview   Before: "How do I ensure everyone has an even number of loaves?" After: "By iterating linearly and fixing odd values by updating the current and next person, we achieve an O(N) solution that correctly identifies if a valid distribution is impossible by checking the final element's parity."
+// Pitfalls    (1) Failing to check the parity of the final element after the loop, which is necessary to determine if a valid distribution is impossible.  (2) Incorrectly assuming that the greedy approach fails to find the minimum number of loaves, when the sequential parity requirement forces a unique solution path.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
