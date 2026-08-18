@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-18, 11:24 a.m.
+// Technique   linear-scan-range-minimum
+// Time        O(t * n)
+// Space       O(t)
+// Insight     The algorithm identifies the minimum width within the inclusive range [start, end] by iterating through the width array for each test case.
+// Interview   Before: "I would use a segment tree to query the range minimum in logarithmic time." After: "Given the constraints and simplicity, a linear scan per query is sufficient, resulting in O(t * n) time complexity, where t is the number of cases and n is the array size."
+// Pitfalls    (1) The loop condition start <= end is inclusive, which is correct, but failing to reset the min variable for each case would cause incorrect results.  (2) The implementation assumes the input indices are always within the bounds of the width array, as it lacks explicit validation for start or end indices.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
