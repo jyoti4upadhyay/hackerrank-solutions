@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-18, 02:41 p.m.
+// Technique   brute-force-nearest-neighbor-search
+// Time        O(n * m)
+// Space       O(n)
+// Insight     The algorithm calculates the distance from every city to every space station to identify the minimum distance for each city, then selects the maximum of these minimums.
+// Interview   Before: "I could use a nested loop to compare every city against every station." After: "This approach runs in O(n * m) time, which is acceptable given the constraints, though sorting the stations and using binary search or a single pass could optimize it to O(n log m) or O(n)."
+// Pitfalls    (1) The O(n * m) complexity may exceed time limits if n and m are both large, as the constraints allow up to 10^5 cities.  (2) The implementation creates an unnecessary ArrayList of size n, which increases space complexity to O(n) instead of O(1) auxiliary space.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
