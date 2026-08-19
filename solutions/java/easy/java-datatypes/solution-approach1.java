@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-19, 12:57 p.m.
+// Technique   exception-handling-range-check
+// Time        O(T)
+// Space       O(1)
+// Insight     The solution uses a try-catch block to identify inputs exceeding the 64-bit long capacity while checking smaller primitive bounds using conditional range comparisons.
+// Interview   Before: "How do you handle numbers larger than a long?" After: "I use a try-catch block with Scanner.nextLong() to catch InputMismatchException for values exceeding 64 bits, then perform O(1) range checks for byte, short, and int types."
+// Pitfalls    (1) Using Math.pow for bounds can introduce precision issues compared to using Long.MIN_VALUE or Long.MAX_VALUE constants.  (2) The catch block assumes any exception is due to size, which may mask other input errors.  (3) The logic fails to account for the exact signed range of long, as the code uses a manual calculation that might overflow.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
