@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-19, 11:21 a.m.
+// Technique   manual-string-padding-formatting
+// Time        O(1)
+// Space       O(1)
+// Insight     The implementation manually constructs the required output format by calculating the necessary padding for strings and conditionally prepending leading zeros to integers based on their magnitude.
+// Interview   Before: "How would you format output in Java?" After: "I would use System.out.printf with format specifiers like %-15s and %03d. This approach is O(1) time and space, ensuring strings are left-justified to 15 characters and integers are zero-padded to 3 digits as required."
+// Pitfalls    (1) Failing to account for the exact 15-character width requirement for the string column.  (2) Incorrectly handling integers with fewer than three digits by not prepending the required number of leading zeros.  (3) Misinterpreting the loop constraint, which is fixed at three iterations based on the problem's sample input structure.
 // ──────────────────────────────────────────────────
 
 import java.util.Scanner;
