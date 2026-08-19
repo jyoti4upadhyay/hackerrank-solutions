@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-19, 11:20 p.m.
+// Technique   two-pointers-comparison
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm verifies a palindrome by comparing characters at symmetric indices moving inward until the pointers meet or a mismatch is found.
+// Interview   Before: "I could reverse the string and compare it to the original." After: "Using two pointers is more efficient, achieving O(n) time and O(1) space by comparing characters from both ends simultaneously, which handles the palindrome check without extra memory allocation."
+// Pitfalls    (1) Using an incorrect loop condition like start < end instead of start <= end may fail to verify the middle character in odd-length strings.  (2) Failing to initialize the flag as true before the loop will result in incorrect output for valid palindromes.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
