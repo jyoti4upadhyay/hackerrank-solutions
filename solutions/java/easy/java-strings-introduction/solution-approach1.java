@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-19, 10:27 p.m.
+// Technique   string-manipulation-and-lexicographical-compari…
+// Time        O(N+M)
+// Space       O(N+M)
+// Insight     The solution leverages the String.compareTo method to determine lexicographical order and uses substring concatenation to capitalize the first character of each input string.
+// Interview   Before: "How would you compare two strings lexicographically and modify their casing?" After: "I use compareTo for O(N+M) lexicographical comparison and substring concatenation for O(N+M) capitalization, ensuring the first character is transformed while preserving the remainder of the string."
+// Pitfalls    (1) Using the == operator instead of compareTo for lexicographical comparison will compare object references rather than character sequences.  (2) Calling substring(1) on a single-character string is valid in Java, but calling charAt(0) on an empty string would throw a StringIndexOutOfBoundsException.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
