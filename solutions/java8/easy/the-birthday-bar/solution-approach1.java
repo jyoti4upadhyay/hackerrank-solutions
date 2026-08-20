@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-20, 03:34 p.m.
+// Technique   sliding-window-fixed-size-sum
+// Time        O(n * m)
+// Space       O(1)
+// Insight     The algorithm iterates through all possible contiguous subarrays of length m and increments a counter whenever the sum of the elements equals the target birth day d.
+// Interview   Before: "I would use a nested loop to check every segment of length m." After: "The implementation uses a sliding window approach with O(n * m) time complexity, ensuring it correctly handles cases where the segment length m exceeds the chocolate bar size n by returning zero immediately."
+// Pitfalls    (1) Failing to handle the case where the birth month m is greater than the number of chocolate squares n, which causes an index out of bounds error.  (2) Incorrectly setting the outer loop boundary to s.size() instead of s.size() - m, which leads to an IndexOutOfBoundsException when accessing elements beyond the list size.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
