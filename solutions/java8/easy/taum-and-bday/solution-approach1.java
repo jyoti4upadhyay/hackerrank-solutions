@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-20, 07:31 p.m.
+// Technique   greedy-cost-minimization
+// Time        O(1)
+// Space       O(1)
+// Insight     The algorithm calculates the minimum cost by comparing the direct purchase price of each gift type against the cost of purchasing the alternative color and applying the conversion fee.
+// Interview   Before: "I would calculate the cost of buying black and white gifts separately." After: "I realized that conversion might be cheaper than direct purchase, so I compare bc, wc, and z to find the minimum cost in O(1) time, ensuring I use long to prevent integer overflow."
+// Pitfalls    (1) Failing to use long for intermediate calculations leads to integer overflow when multiplying large gift counts by their costs.  (2) Neglecting to consider that the conversion cost z might be cheaper than the original price of either gift type.  (3) Assuming that only one conversion path is possible without checking if both bc and wc can be reduced via z.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
