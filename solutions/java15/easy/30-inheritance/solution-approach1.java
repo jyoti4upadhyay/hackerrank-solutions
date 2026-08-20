@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-20, 12:54 p.m.
+// Technique   class-inheritance-and-array-averaging
+// Time        O(N)
+// Space       O(N)
+// Insight     The Student class extends the Person base class by storing an additional integer array and implementing a grade calculation method based on the arithmetic mean of the provided scores.
+// Interview   Before: "How do I handle the base class constructor?" After: "Use the super keyword to initialize the base class fields, then store the array. The calculate method runs in O(N) time, where N is the number of test scores, by summing elements and mapping the average to a character grade."
+// Pitfalls    (1) Failing to call the super constructor as the first statement in the derived class constructor.  (2) Incorrectly mapping the average ranges to the specified grade characters defined in the problem statement.  (3) Performing integer division that truncates the average before comparing it against the grade thresholds.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
