@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-20, 09:51 a.m.
+// Technique   abstract-class-inheritance
+// Time        O(1)
+// Space       O(1)
+// Insight     The MyBook class extends the abstract Book class by providing a concrete implementation of the abstract display method and initializing the additional price field via a parameterized constructor.
+// Interview   Before: "How do I implement an abstract class in Java?" After: "You define a subclass that extends the abstract class, calls the super constructor, and provides the implementation for all abstract methods. This approach has O(1) time and space complexity for the display operation."
+// Pitfalls    (1) Adding a public access modifier to the MyBook class causes a compilation error because the problem requires package-private access.  (2) Failing to call the super constructor in the MyBook class prevents the initialization of the title and author fields inherited from the Book class.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
