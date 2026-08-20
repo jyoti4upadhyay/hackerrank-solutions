@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-20, 04:51 p.m.
+// Technique   sorting-and-linear-scan
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm identifies unique stick lengths by sorting the array and skipping duplicates, then calculates the remaining stick count for each unique length by subtracting the number of sticks already discarded.
+// Interview   Before: "How would you simulate the stick cutting process?" After: "I sort the array to process unique lengths in increasing order, which allows me to count remaining sticks in O(n^2) time, ensuring we handle the n=1000 constraint efficiently."
+// Pitfalls    (1) Failing to handle duplicate stick lengths correctly by not skipping indices where arr.get(i) equals arr.get(i-1).  (2) Miscalculating the number of remaining sticks by incorrectly counting elements smaller than the current shortest length.  (3) Assuming the input array is already sorted, which leads to incorrect iteration logic.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
