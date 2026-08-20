@@ -6,13 +6,7 @@
 // Platform    HackerRank
 // Language    java8
 // Status      Accepted
-// Submitted   2026-08-20, 04:49 p.m.
-// Technique   sorting-and-linear-scan
-// Time        O(n^2)
-// Space       O(n)
-// Insight     The algorithm identifies unique stick lengths by sorting the input and iterates through them to count how many sticks remain greater than or equal to the current minimum length.
-// Interview   Before: "I would use a frequency map to track stick counts." After: "Sorting allows us to process unique lengths in O(n log n) time, though this specific implementation uses an O(n^2) nested loop approach to count remaining sticks at each iteration, which is acceptable given the constraint n ≤ 1000."
-// Pitfalls    (1) Failing to handle duplicate stick lengths correctly by not using the equality check to skip already processed values.  (2) Misinterpreting the requirement to count sticks remaining before each cut, leading to an incorrect number of iterations.  (3) Assuming the input list is already sorted, which is not guaranteed by the problem statement.
+// Submitted   2026-08-20, 04:51 p.m.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
@@ -42,7 +36,7 @@ class Result {
     List<Integer>ls=new ArrayList<>();
     for(int i=0;i<arr.size();i++){
         if(i>0 && arr.get(i).equals(arr.get(i-1))){
-            continue;
+         continue;
         }
         List<Integer>res=new ArrayList<>(arr);
         int count=0;
