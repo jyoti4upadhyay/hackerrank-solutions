@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-20, 09:59 a.m.
+// Technique   concrete-class-inheritance
+// Time        O(1)
+// Space       O(1)
+// Insight     The implementation satisfies the abstract class contract by providing a concrete subclass that overrides the abstract method and initializes the inherited title field.
+// Interview   Before: "How do I handle abstract methods in Java?" After: "You must provide a concrete implementation for every abstract method in a subclass, resulting in O(1) time and space complexity for this specific title assignment."
+// Pitfalls    (1) Failing to provide a concrete implementation for the abstract setTiltle method causes a compilation error.  (2) Declaring the MyBook class as public violates the problem constraint requiring it to be non-public.  (3) Attempting to instantiate the abstract Book class directly results in a compilation error.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
