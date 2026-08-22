@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-23, 01:29 a.m.
+// Technique   java-biginteger-arithmetic
+// Time        O(N^1.585)
+// Space       O(N)
+// Insight     The solution utilizes the BigInteger class to perform arbitrary-precision arithmetic on numeric strings that exceed the capacity of primitive long types.
+// Interview   Before: "I would use long or double to store these inputs." After: "Since the inputs can have 200 digits, I must use BigInteger to avoid overflow, which handles addition and multiplication in sub-quadratic time complexity relative to the number of digits N."
+// Pitfalls    (1) Attempting to parse input strings into primitive types like long or double will cause overflow errors for inputs exceeding 19 digits.  (2) Failing to handle the input as a string before passing it to the BigInteger constructor prevents processing of numbers larger than 64 bits.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
