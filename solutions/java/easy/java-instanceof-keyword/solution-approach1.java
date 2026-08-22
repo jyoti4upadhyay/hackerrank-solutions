@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-23, 01:06 a.m.
+// Technique   instanceof-type-checking
+// Time        O(N)
+// Space       O(N)
+// Insight     The algorithm iterates through the ArrayList and uses the instanceof operator to classify each object into one of three distinct types, incrementing corresponding counters for each match.
+// Interview   Before: "I would use a series of if-else statements to check the object type." After: "Using instanceof allows for safe runtime type identification in O(N) time, where N is the number of elements in the list, ensuring each instance is correctly categorized into its respective class."
+// Pitfalls    (1) Failing to account for the possibility of null elements in the ArrayList, which would return false for all instanceof checks.  (2) Using if-else if blocks instead of independent if statements, which would incorrectly handle objects if they were allowed to inherit from multiple types in this hierarchy.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
