@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-22, 08:56 p.m.
+// Technique   array-list-dynamic-manipulation
+// Time        O(Q * N)
+// Space       O(N)
+// Insight     The implementation utilizes the Java ArrayList class to perform dynamic insertions and deletions, where each operation triggers a linear-time shift of subsequent elements.
+// Interview   Before: "I would use a LinkedList to optimize insertions and deletions to O(1)." After: "While LinkedList offers O(1) mutation, ArrayList is preferred here for O(1) random access and better cache locality, despite O(N) shifts per query, resulting in O(Q * N) total time complexity."
+// Pitfalls    (1) Using ArrayList.add(index, element) or ArrayList.remove(index) results in O(N) time complexity per operation due to element shifting.  (2) Failing to account for the index-based nature of the operations, which can throw an IndexOutOfBoundsException if the index is outside the current list bounds.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
