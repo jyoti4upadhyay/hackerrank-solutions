@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-23, 11:42 p.m.
+// Technique   frequency-array-counting
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maps each input integer to a fixed-size frequency array of 100 elements by incrementing the index corresponding to the integer value.
+// Interview   Before: "How would you sort these integers without comparisons?" After: "I use a frequency array of size 100 to count occurrences in O(n) time, which is optimal given the constraint that all input values are strictly less than 100."
+// Pitfalls    (1) Failing to initialize the frequency array with exactly 100 elements as required by the problem statement.  (2) Assuming input values could exceed 99, which would cause an ArrayIndexOutOfBoundsException given the fixed array size of 100.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
