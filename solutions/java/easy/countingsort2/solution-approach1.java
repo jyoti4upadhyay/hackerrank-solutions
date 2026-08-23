@@ -7,6 +7,12 @@
 // Language    java
 // Status      Accepted
 // Submitted   2026-08-23, 11:53 p.m.
+// Technique   frequency-array-counting-sort
+// Time        O(n + k)
+// Space       O(k)
+// Insight     The algorithm maps input integers to indices of a fixed-size frequency array, then reconstructs the sorted sequence by iterating through the frequency counts.
+// Interview   Before: "I would use a standard comparison sort like quicksort." After: "Counting sort is more efficient here because the input range is constrained to 0-99, allowing O(n + k) time complexity where k is the range size, avoiding the O(n log n) comparison limit."
+// Pitfalls    (1) The implementation assumes input integers are strictly within the range [0, 99], which will cause an ArrayIndexOutOfBoundsException if the input contains values outside this range.  (2) The algorithm does not preserve the original relative order of identical elements, making it a non-stable sorting implementation.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
