@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 03:52 a.m.
+// Technique   iterative-list-reduction
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm repeatedly records the current list size, identifies the minimum value, and simultaneously removes all occurrences of that minimum while decrementing all remaining elements by that value.
+// Interview   Before: "How would you simulate the stick cutting process?" After: "I used an iterative approach that removes elements in O(n) per pass, leading to O(n^2) time complexity, which is efficient enough given the constraint n ≤ 1000."
+// Pitfalls    (1) Failing to decrement the loop index i after removing an element from the list causes the iterator to skip the next element.  (2) Modifying the list size during iteration without careful index management leads to an IndexOutOfBoundsException or incorrect processing of elements.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
