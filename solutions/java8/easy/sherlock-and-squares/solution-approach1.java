@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 12:55 a.m.
+// Technique   iterative-square-root-check
+// Time        O(sqrt(b))
+// Space       O(1)
+// Insight     The algorithm counts integers whose squares fall within the inclusive range [a, b] by iterating through all positive integers i until i squared exceeds b.
+// Interview   Before: "I would iterate through every number from a to b and check if each is a perfect square." After: "That is inefficient for large ranges. Instead, I iterate up to the square root of b, which is O(sqrt(b)), ensuring we only check relevant candidates."
+// Pitfalls    (1) Using Math.pow for integer squares can lead to precision issues with very large inputs, though it suffices for the given constraints.  (2) The loop condition i*i <= b must be carefully checked to avoid integer overflow if b approaches Integer.MAX_VALUE.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
