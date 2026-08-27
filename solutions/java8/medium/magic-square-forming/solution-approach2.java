@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-27, 05:12 p.m.
+// Technique   brute-force-precomputed-magic-squares
+// Time        O(1)
+// Space       O(1)
+// Insight     The algorithm calculates the absolute difference between the input matrix and all eight possible 3x3 magic squares, selecting the minimum total cost.
+// Interview   Before: "I could try to generate magic squares using backtracking." After: "Since there are only eight possible 3x3 magic squares, it is more efficient to precompute them and compare the input against each, resulting in O(1) time complexity."
+// Pitfalls    (1) Failing to account for all eight possible rotations and reflections of a 3x3 magic square.  (2) Incorrectly calculating the absolute difference for each cell, which is required by the cost definition |a - b|.  (3) Assuming the input matrix is already a magic square and failing to check all eight configurations.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
