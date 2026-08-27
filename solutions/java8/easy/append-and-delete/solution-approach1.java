@@ -7,6 +7,11 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 01:44 a.m.
+// Technique   common-prefix-length-calculation
+// Time        O(min(s.length, t.length))
+// Space       O(min(s.length, t.length))
+// Insight     The algorithm calculates the length of the longest common prefix to determine the minimum operations required, then validates if the remaining moves allow for parity-based completion or total string deletion.
+// Pitfalls    (1) Failing to account for the parity requirement where (k - total) must be even for valid conversions.  (2) Incorrectly assuming that the total number of operations must exactly equal the difference in lengths without considering the parity constraint.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
