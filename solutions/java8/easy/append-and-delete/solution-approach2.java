@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 01:47 a.m.
+// Technique   common-prefix-length-calculation
+// Time        O(min(s.length, t.length))
+// Space       O(min(s.length, t.length))
+// Insight     The algorithm calculates the minimum operations required to reach the common prefix and checks if the remaining moves allow for parity-based adjustment or total string deletion.
+// Interview   Before: "I would use a stack to simulate the operations." After: "That is inefficient; instead, find the common prefix length to determine the minimum operations in O(N) time, then validate if the remaining k allows for valid parity or full string clearing."
+// Pitfalls    (1) Failing to account for the case where k is large enough to delete the entire string and then perform redundant operations on an empty string.  (2) Incorrectly assuming that (k - total) must be zero, ignoring that extra operations can be consumed in pairs by deleting and appending the same character.  (3) Overlooking the constraint that deleting from an empty string results in an empty string, which allows for absorbing excess k values.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
