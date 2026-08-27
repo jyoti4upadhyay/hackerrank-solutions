@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 02:16 a.m.
+// Technique   nested-linear-search
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm identifies the index y such that p[y-1] equals x, then finds the index j such that p[j-1] equals y, effectively solving p[p[j]] = x for each x from 1 to n.
+// Interview   Before: "I would use a hash map to store value-to-index mappings for O(1) lookups." After: "The current implementation uses nested loops to find indices, resulting in O(n^2) time complexity, which is acceptable given the constraints where n is up to 50."
+// Pitfalls    (1) Confusing 1-based indexing of the problem statement with the 0-based indexing of the Java List.  (2) Assuming the input list is sorted, which contradicts the problem statement that elements are distinct but not necessarily ordered.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
