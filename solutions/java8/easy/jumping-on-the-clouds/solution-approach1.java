@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-28, 09:29 p.m.
+// Technique   greedy-lookahead-traversal
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm greedily prioritizes two-step jumps to minimize the total count, falling back to a single-step jump only when the two-step target is a thunderhead.
+// Interview   Before: "I would use dynamic programming to find the shortest path." After: "Since the game guarantees a win and allows jumps of size 1 or 2, a greedy approach is optimal. It runs in O(n) time and O(1) space, always checking the furthest possible safe cloud first."
+// Pitfalls    (1) Failing to account for the final jump when the loop terminates at the second-to-last cloud.  (2) Accessing index i+2 without verifying it is within the bounds of the list size.  (3) Assuming a two-step jump is always possible, ignoring the requirement to check if the target cloud is a thunderhead.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
