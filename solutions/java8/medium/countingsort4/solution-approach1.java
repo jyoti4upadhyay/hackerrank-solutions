@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 02:05 a.m.
+// Technique   bucket-sort-stringbuilder-array
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation uses an array of StringBuilders to maintain stable ordering by appending elements to buckets corresponding to their integer keys while processing the input list sequentially.
+// Interview   Before: "How do I sort these pairs while keeping the original order for identical keys?" After: "Use a counting sort approach with an array of buckets. By iterating through the input once and appending to the corresponding bucket, we achieve O(n) time and space complexity while preserving stability."
+// Pitfalls    (1) Failing to handle the string replacement rule for the first half of the input array as specified.  (2) Assuming the maximum integer value is small without verifying the constraint that integers are within the range 0 to 99.  (3) Incorrectly managing trailing spaces when concatenating the final output string from the buckets.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
