@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-29, 02:02 p.m.
+// Technique   sorting-comparison-and-index-tracking
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The algorithm identifies all indices where the input array deviates from its sorted version and validates whether these deviations can be resolved by a single swap or a single reverse operation.
+// Interview   Before: "How do I detect if a swap or reverse fixes the array?" After: "Compare the array to its sorted version to find mismatched indices. If there are two, it is a swap; if more, check if reversing the segment restores order. This runs in O(N log N) time due to sorting."
+// Pitfalls    (1) Failing to account for the 1-based indexing requirement when printing the swap or reverse indices.  (2) Assuming that any number of mismatches greater than two can be fixed by a reverse operation without verifying the sorted order of the reversed segment.  (3) Neglecting the requirement to prioritize a swap operation over a reverse operation when both are valid.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
