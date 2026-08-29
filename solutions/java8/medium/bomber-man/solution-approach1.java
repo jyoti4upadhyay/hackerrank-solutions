@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-29, 05:42 p.m.
+// Technique   periodic-state-simulation
+// Time        O(R * C)
+// Space       O(R * C)
+// Insight     The grid state follows a periodic pattern of length four after the first second, allowing the simulation to be reduced to constant-time logic based on the parity and modulo of n.
+// Interview   Before: "I would simulate every second step-by-step." After: "Since the grid state repeats every four seconds after n=1, I can compute the result in O(R * C) time by identifying the cycle, avoiding redundant simulations for large n."
+// Pitfalls    (1) Failing to handle the n=1 case separately, which is the only state that does not follow the periodic pattern.  (2) Incorrectly assuming the grid is always full at even seconds, ignoring that n=0 is not defined in the problem constraints.  (3) Miscalculating the explosion logic by failing to mark all neighbors of a bomb simultaneously before updating the grid.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
