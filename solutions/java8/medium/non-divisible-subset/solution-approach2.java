@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 12:01 a.m.
+// Technique   remainder-frequency-map-greedy
+// Time        O(n + k)
+// Space       O(k)
+// Insight     The algorithm counts remainder frequencies and greedily selects the larger count between complementary remainders i and k-i to maximize the subset size while ensuring no two elements sum to a multiple of k.
+// Interview   Before: "How would you find the largest subset where no two elements sum to a multiple of k?" After: "I count the remainders modulo k and greedily pick the maximum of each pair (i, k-i), resulting in O(n + k) time complexity and O(k) space complexity."
+// Pitfalls    (1) Failing to handle the remainder 0 case by capping it at 1, as multiple elements with remainder 0 would sum to a multiple of k.  (2) Incorrectly handling the middle remainder when k is even, where i equals k-i, requiring a cap of 1 to prevent self-sum divisibility.  (3) Assuming the loop range covers all remainders without accounting for the symmetry between i and k-i.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
