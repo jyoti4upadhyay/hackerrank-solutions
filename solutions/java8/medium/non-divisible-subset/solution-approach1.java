@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-29, 11:47 p.m.
+// Technique   remainder-frequency-map-greedy
+// Time        O(n + k)
+// Space       O(k)
+// Insight     The algorithm maximizes the subset size by greedily selecting the larger frequency count between remainder pairs that sum to k, while handling the special cases of remainder 0 and k/2 separately.
+// Interview   Before: "I would try to generate all possible subsets and check the divisibility condition." After: "That would be exponential. Instead, I group numbers by their remainder modulo k, which allows an O(n + k) solution by picking the optimal count for each remainder pair."
+// Pitfalls    (1) Failing to handle the case where remainder 0 appears multiple times, as only one such element can be included in the subset.  (2) Incorrectly handling the middle remainder when k is even, where only one element with remainder k/2 can be included.  (3) Assuming the loop range covers all remainders without considering that pairs (i, k-i) must be processed together to avoid double counting.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
