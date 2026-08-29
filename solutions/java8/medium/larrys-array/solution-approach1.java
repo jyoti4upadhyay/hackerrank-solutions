@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-29, 12:25 p.m.
+// Technique   inversion-count-parity-check
+// Time        O(n^2)
+// Space       O(1)
+// Insight     The parity of the total number of inversions in a permutation remains invariant under a three-element rotation, meaning a sequence is sortable if and only if its inversion count is even.
+// Interview   Before: "I would simulate the rotations to sort the array." After: "Since each rotation preserves the parity of inversions, I calculate the total inversion count in O(n^2) time; if the count is even, the array is sortable, otherwise it is not."
+// Pitfalls    (1) Assuming the inversion count parity check applies to all permutation sorting problems without verifying the specific operation's effect on parity.  (2) Using an O(n^2) approach for very large arrays where an O(n log n) merge-sort-based inversion count would be required for performance.  (3) Misinterpreting the problem as requiring actual simulation of rotations instead of identifying the mathematical invariant.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
