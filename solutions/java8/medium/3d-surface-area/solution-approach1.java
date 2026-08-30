@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 11:36 a.m.
+// Technique   grid-traversal-differential-surface-area
+// Time        O(H * W)
+// Space       O(1)
+// Insight     The total surface area is calculated by summing the top and bottom faces of each stack plus the positive differences in height between adjacent cells and the boundary edges.
+// Interview   Before: "How would you calculate the surface area of a 3D structure represented by a 2D grid?" After: "I iterate through each cell, adding 2 for the top and bottom faces, then adding the positive height differences for all four neighbors. This O(H * W) approach correctly handles boundary conditions where neighbors are effectively zero."
+// Pitfalls    (1) Failing to account for the top and bottom faces of each stack, which always contribute 2 to the surface area regardless of neighbors.  (2) Incorrectly handling boundary conditions by assuming neighbors outside the grid have a height other than zero.  (3) Neglecting to skip cells with a height of zero, which could lead to incorrect surface area calculations if not handled explicitly.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
