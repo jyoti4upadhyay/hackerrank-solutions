@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 06:29 p.m.
+// Technique   sorting-and-two-pass-scan
+// Time        O(n log n)
+// Space       O(n)
+// Insight     Sorting the array ensures that the minimum absolute difference must exist between adjacent elements, allowing a two-pass linear scan to identify all pairs with that minimum difference.
+// Interview   Before: "I would use a nested loop to compare every pair." After: "Sorting reduces the search space to adjacent elements, achieving O(n log n) time complexity, which is efficient for the given constraints where n can be large."
+// Pitfalls    (1) Failing to sort the input array, which is required to ensure the minimum difference is found between adjacent elements.  (2) Using an incorrect loop bound like arr.size() instead of arr.size()-1, which causes an IndexOutOfBoundsException when accessing i+1.  (3) Assuming only one pair exists, whereas the problem requires returning all pairs that share the minimum absolute difference.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
