@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 02:22 p.m.
+// Technique   nested-string-search-and-verification
+// Time        O(R * C * r * c)
+// Space       O(1)
+// Insight     The algorithm iterates through each row of the grid to find all occurrences of the first pattern row, then verifies if subsequent pattern rows match the grid at the same column offset.
+// Interview   Before: "I would use a 2D array search." After: "I iterate through the grid rows to find the first pattern row, then verify the remaining rows. This approach has O(R * C * r * c) time complexity, ensuring we handle overlapping pattern occurrences correctly by checking all possible starting indices."
+// Pitfalls    (1) Failing to check if the remaining grid rows exist when the pattern extends beyond the grid boundary.  (2) Using substring indices that exceed the grid row length, causing a StringIndexOutOfBoundsException.  (3) Assuming the first pattern row only appears once, which ignores multiple potential starting columns for the same row.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
