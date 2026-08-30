@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-31, 01:51 a.m.
+// Technique   linear-iteration-with-list-filtering
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The final stone value is determined by the linear combination of n-1 steps using differences a and b, where the number of times b is chosen ranges from 0 to n-1.
+// Interview   Before: "I could use recursion to explore all paths." After: "Since there are only n possible combinations of differences, I can iterate through the count of b-steps in O(n^2) time, including the list contains check, to find all unique final values."
+// Pitfalls    (1) Using list.contains() inside the loop results in O(n^2) time complexity instead of O(n).  (2) Failing to account for the case where a equals b, which produces only one unique value.  (3) Miscalculating the number of steps as n instead of n-1, leading to incorrect stone values.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
