@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 10:43 p.m.
+// Technique   block-swapping-permutation-construction
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm constructs the permutation by swapping adjacent blocks of size k, which is only possible if n is divisible by 2k.
+// Interview   Before: "I would try to generate all permutations and check the absolute difference condition." After: "That would be O(n!), which is too slow. Instead, I use a constructive approach with O(n) time complexity, leveraging the fact that valid permutations require n to be a multiple of 2k."
+// Pitfalls    (1) Failing to handle the k=0 case separately, which results in an incorrect division by zero or logic error.  (2) Assuming n must be divisible by k instead of the stricter requirement of 2k.  (3) Incorrectly calculating the loop bounds for the two internal blocks, leading to index out of bounds or invalid permutation values.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
