@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 04:17 p.m.
+// Technique   modular-arithmetic-offset-calculation
+// Time        O(1)
+// Space       O(1)
+// Insight     The solution calculates the final chair by determining if the sweets are exhausted before or after wrapping around the circular table, using modular arithmetic to handle the cyclic distribution.
+// Interview   Before: "I would simulate the distribution by iterating through all m sweets." After: "That would be O(m) time, which fails for large inputs. Instead, I use O(1) modular arithmetic to find the position, accounting for the starting chair s and the total number of prisoners n."
+// Pitfalls    (1) Failing to handle the case where the remainder is zero, which correctly maps to the last chair n.  (2) Incorrectly calculating the offset when the number of sweets m is less than or equal to the remaining seats from the start position s.  (3) Assuming standard 0-based indexing when the problem explicitly uses 1-based chair numbering.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
