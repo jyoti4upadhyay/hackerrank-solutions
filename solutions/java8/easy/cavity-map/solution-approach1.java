@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-31, 02:14 a.m.
+// Technique   grid-traversal-with-string-builder
+// Time        O(n^2)
+// Space       O(n^2)
+// Insight     The algorithm iterates through the interior cells of the grid, replacing a cell with 'X' if its depth is strictly greater than its four immediate neighbors.
+// Interview   Before: "I need to identify cavities in a grid." After: "I iterate through the interior rows and columns, comparing each cell to its four neighbors in O(n^2) time, ensuring border cells remain unchanged as per the problem constraints."
+// Pitfalls    (1) Failing to exclude border cells from the cavity check, which violates the problem definition.  (2) Using incorrect loop bounds that include the first or last row/column, leading to index out of bounds errors.  (3) Modifying the grid in-place while iterating, which could cause incorrect comparisons with already updated 'X' values.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
