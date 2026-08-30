@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 05:05 p.m.
+// Technique   nested-loop-list-tracking
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm iterates through each element as a potential triplet start and greedily collects subsequent elements that maintain the constant difference d.
+// Interview   Before: "I could use a hash set to check for the existence of x+d and x+2d in O(n) time." After: "My current implementation uses nested loops to track the sequence, resulting in O(n^2) time complexity, which is acceptable given the constraints on n."
+// Pitfalls    (1) The nested loop approach creates a new ArrayList for every starting element, which is inefficient for large inputs.  (2) The logic relies on the input array being sorted to correctly identify triplets using the difference d.  (3) The condition ls.size() >= 3 incorrectly counts sequences longer than three elements as a single beautiful triplet.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
