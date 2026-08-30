@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-30, 06:19 p.m.
+// Technique   geometric-cycle-simulation
+// Time        O(log t)
+// Space       O(1)
+// Insight     The counter operates in cycles of length 3, 6, 12, and so on, where each cycle starts at time startT with an initial value startV that doubles every cycle.
+// Interview   Before: "I could simulate the counter second by second." After: "Since t can be very large, I use a geometric approach to find the cycle containing t in O(log t) time, which is much more efficient than linear simulation."
+// Pitfalls    (1) Using int instead of long for t, startT, and startV, which causes overflow for large inputs.  (2) Incorrectly calculating the cycle boundary as startT + startV instead of startT + startV - 1.  (3) Failing to account for the doubling of the initial value startV at the start of each new cycle.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
