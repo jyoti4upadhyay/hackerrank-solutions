@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-08-31, 02:44 a.m.
+// Technique   brute-force-pairwise-comparison
+// Time        O(n^2 * m)
+// Space       O(n^2)
+// Insight     The algorithm evaluates every unique pair of attendees to calculate the union of their known topics by counting indices where at least one attendee has a '1'.
+// Interview   Before: "I would use a bitmask to represent topics for faster comparison." After: "The current implementation uses O(n^2 * m) time to check all pairs, which is acceptable given the constraints where n is up to 500 and m is up to 500."
+// Pitfalls    (1) Storing all pair counts in an ArrayList consumes O(n^2) space, which may exceed memory limits for large n.  (2) Sorting the entire list of pair counts adds unnecessary O(n^2 log(n^2)) time complexity instead of tracking the maximum and frequency in a single pass.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
