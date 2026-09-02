@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-09-02, 08:25 p.m.
+// Technique   regex-pattern-matching-and-trimming
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation uses a regular expression to capture both single-line and multi-line comment blocks, then processes each line by removing leading and trailing whitespace to satisfy the output requirements.
+// Interview   Before: "How do I handle multi-line comments while preserving their internal structure?" After: "The regex captures the entire block, and splitting by newline allows for O(N) processing where each line is trimmed individually to meet the formatting constraints."
+// Pitfalls    (1) Failing to trim leading whitespace from each line of a multi-line comment violates the requirement to remove leading white space before comments.  (2) Using a greedy regex quantifier instead of a non-greedy one would incorrectly merge multiple distinct comment blocks into a single match.  (3) Collapsing multi-line comments into a single line violates the requirement to preserve the original line structure.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
