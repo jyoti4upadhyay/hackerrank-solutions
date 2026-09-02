@@ -7,6 +7,12 @@
 // Language    java8
 // Status      Accepted
 // Submitted   2026-09-02, 02:13 p.m.
+// Technique   regex-pattern-matching-and-tag-stripping
+// Time        O(N * L)
+// Space       O(L)
+// Insight     The solution uses a non-greedy regex to capture the href attribute and the inner content of anchor tags, then recursively strips nested HTML tags from the captured text content.
+// Interview   Before: "How would you extract nested HTML content?" After: "I would use a regex to isolate the anchor tag's href and inner body, then apply a secondary regex to strip all nested tags from that body. This approach runs in O(N * L) time, where N is the number of lines and L is the line length."
+// Pitfalls    (1) The regex assumes the href attribute is always enclosed in single or double quotes, which may fail on malformed HTML missing quotes.  (2) The nested tag stripping regex removes all content within angle brackets, which might incorrectly strip text if the link content contains literal characters like '<' or '>'.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
